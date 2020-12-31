@@ -1,0 +1,36 @@
+{
+  "preset": "ts-jest",
+  "verbose": true,
+  "transform": {
+    ".(ts|tsx)": "ts-jest"
+  },
+  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$",
+  "moduleFileExtensions": [
+    "js",
+    "ts",
+    "tsx"
+  ],
+  "moduleNameMapper": {
+      "^@arlequins/beat-library/(.*)$": "<rootDir>/library/$1",
+      "^typings/(.*)$": "<rootDir>/typings/$1",
+      "common": "<rootDir>/typings/common.d"
+  },
+  "globals": {
+    "window": {},
+    "ts-jest": {
+      "tsconfig": "./tsconfig.json"
+    }
+  },
+  "setupFiles": [
+    "./jest.stubs.js"
+  ],
+  "setupFilesAfterEnv": [
+    "./jest.tests.js"
+  ],
+  "testMatch": null,
+  "coverageReporters": [
+    "json-summary",
+    "text",
+    "lcov"
+  ]
+}
